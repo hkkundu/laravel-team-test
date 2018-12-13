@@ -8,6 +8,23 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+const example = require('./components/ExampleComponent.vue');
+const sample = require('./components/SampleComponent.vue');
+const task = require('./components/TaskComponent.vue');
+const routes =[
+{ path: '/', component: task },
+{ path: '/example', component: example },
+{ path: '/sample', component: sample }
+]
+// const router = new VueRouter({
+//   routes: [
+//     // dynamic segments start with a colon
+//     { path: '/example', component: example }
+//   ]
+// })
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,9 +32,12 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('articles', require('./components/Articles.vue'));
-Vue.component('navbar', require('./components/Navbar.vue'));
+//Vue.component('example-component', require('./components/ExampleComponent.vue'));
+const router = new VueRouter({
+	routes
+})
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,
 });

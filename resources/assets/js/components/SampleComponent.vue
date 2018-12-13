@@ -3,10 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Example Component</div>
+                    <div class="card-header">Sample Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        I'm an sample component.
                     </div>
                 </div>
             </div>
@@ -17,7 +17,8 @@
 <script>
     export default {
         mounted() {
-            console.log('Example Component mounted.')
+            console.log('sample Component mounted.')
         }
     }
 </script>
+<style type="text/css" scoped></style>

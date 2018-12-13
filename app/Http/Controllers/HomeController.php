@@ -7,6 +7,8 @@ use DB;
 use App\LoanDtl;
 use App\PmtSchDtl;
 use App\CustDtl;
+use App\Article;
+use App\Http\Resources\Article as ArticleResource;
 
 class HomeController extends Controller
 {
@@ -42,5 +44,10 @@ class HomeController extends Controller
 		$sql_loan = CustDtl::find($cust_id)->loan_dtl()->where('com_id',$com_id)->get();
 		//dd($cust_id);
 		return view('showloan',compact('sql_loan', 'cust_id'));
+    }
+	public function article()
+    {
+        //return new ArticleResource(Article::find(1));
+		return ArticleResource::collection(Article::all());
     }
 }
